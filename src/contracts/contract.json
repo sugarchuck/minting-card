@@ -5,7 +5,7 @@
   "chain_symbol": "MATIC",
   "chain": "Polygon",
   "chain_id": 137,
-  "address": "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+  "address": "0x827acb09a2dc20e39c9aad7f7190",
   "abi": [
     {
       "inputs": [
