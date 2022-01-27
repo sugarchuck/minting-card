@@ -155,7 +155,7 @@ function Minter() {
         ...prevState,
         loading: false,
         status:
-        (`Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`, 0)
+        `Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`,
       }));
       getSupply();
     } catch (err) {
