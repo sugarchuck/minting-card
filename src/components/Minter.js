@@ -151,27 +151,11 @@ function Minter() {
         params: [params],
       });
       
-      this.setMessage(`Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`, 0)
-
-      const wait = () => {
-          this.web3.eth.getTransaction(txHash).then((tx) => {
-            if (tx.blockNumber === null) {
-              setTimeout(() => wait(), 1000)
-              return
-            }
-
-            this.setMessage(`Transaction successful!`)
-
-            resolve(tx)
-          })
-        }
-
-  
-        setMintInfo((prevState) => ({
+      setMintInfo((prevState) => ({
         ...prevState,
         loading: false,
         status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation",
+        (`Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`, 0)
       }));
       getSupply();
     } catch (err) {
