@@ -167,7 +167,7 @@ function Minter() {
   };
 
   const updateAmount = (newAmount) => {
-    if (newAmount <= 5 && newAmount >= 1) {
+    if (newAmount <= 1 && newAmount >= 1) {
       setMintInfo((prevState) => ({
         ...prevState,
         amount: newAmount,
