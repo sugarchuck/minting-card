@@ -15,7 +15,7 @@ const initialInfoState = {
 
 const initialMintState = {
   loading: false,
-  status: `Mint your ${contract.name} to get 20% value back on everyone's Mint and win 100 BNB! Accumulate Mints for more Chances to win `,
+  status: `Mint your ${contract.name} to get 20% value back on everyone's Mint and win 100 BNB! Accumulate Mints for more Chances to win. (Verifiable Random Function powered by Chainlink)`,
   amount: 1,
   supply: "0",
   cost: "0",
