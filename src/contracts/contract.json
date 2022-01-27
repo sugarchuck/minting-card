@@ -1,11 +1,11 @@
 {
-  "name": "Test Token",
-  "symbol": "TST",
+  "name": "Destiny Test NFT",
+  "symbol": "DNFT",
   "total_supply": 10,
   "chain_symbol": "BNB",
   "chain": "BSC Testnet",
   "chain_id": 97,
-  "address": "0xc2605c9ce7b15Cc548054C2B2f4d6195EC6ac8a3",
+  "address": "0x60Fe785882767394aBD82cB0A6E8FDCe179575F3",
   "abi": [
     {
       "inputs": [

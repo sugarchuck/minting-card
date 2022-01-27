@@ -150,7 +150,24 @@ function Minter() {
         method: "eth_sendTransaction",
         params: [params],
       });
-      setMintInfo((prevState) => ({
+      
+      this.setMessage(`Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`, 0)
+
+      const wait = () => {
+          this.web3.eth.getTransaction(txHash).then((tx) => {
+            if (tx.blockNumber === null) {
+              setTimeout(() => wait(), 1000)
+              return
+            }
+
+            this.setMessage(`Transaction successful!`)
+
+            resolve(tx)
+          })
+        }
+
+  
+        setMintInfo((prevState) => ({
         ...prevState,
         loading: false,
         status:
