@@ -1,11 +1,11 @@
 {
   "name": "Awsome New NFT",
   "symbol": "ANFT",
-  "total_supply": 1000,
-  "chain_symbol": "MATIC",
-  "chain": "Polygon",
-  "chain_id": 137,
-  "address": "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+  "total_supply": 10,
+  "chain_symbol": "BNB",
+  "chain": "BSC Testnet",
+  "chain_id": 97,
+  "address": "0x6B8Cf88fE57A1Dd4715c8a71e9403ff4697B4Db4",
   "abi": [
     {
       "inputs": [
