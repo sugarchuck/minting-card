@@ -151,12 +151,22 @@ function Minter() {
         params: [params],
       });
       
+
+      const txText = "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation"
       setMintInfo((prevState) => ({
         ...prevState,
         loading: false,
         status:
-        `Transaction sent (Please Wait...): <a href="https://testnet.bscscan.com/tx/${txHash}" target="_blank">view transaction</a>`,
+        $('<a href="'+testnet.bscscan.com/tx/txHash+'">'+txText+'</a>').appendTo($('body')),
       }));
+
+      /*
+      setMintInfo((prevState) => ({
+        ...prevState,
+        loading: false,
+        status:
+          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation",
+      }));*/
       getSupply();
     } catch (err) {
       setMintInfo((prevState) => ({
