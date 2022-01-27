@@ -155,8 +155,8 @@ function Minter() {
         ...prevState,
         loading: false,
         status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation ${txHash}",
-      }));
+          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation (Verifiable Random Function powered by Chainlink)",
+        }));
       getSupply();
     } catch (err) {
       setMintInfo((prevState) => ({
