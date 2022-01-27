@@ -1,11 +1,11 @@
 {
-  "name": "Awsome New NFT",
-  "symbol": "ANFT",
+  "name": "Test Token",
+  "symbol": "TST",
   "total_supply": 10,
   "chain_symbol": "BNB",
   "chain": "BSC Testnet",
   "chain_id": 97,
-  "address": "0x6B8Cf88fE57A1Dd4715c8a71e9403ff4697B4Db4",
+  "address": "0xc2605c9ce7b15Cc548054C2B2f4d6195EC6ac8a3",
   "abi": [
     {
       "inputs": [
