@@ -15,7 +15,7 @@ const initialInfoState = {
 
 const initialMintState = {
   loading: false,
-  status: `Mint your ${contract.name}`,
+  status: `Mint your ${contract.name} to get 20% value back on everyone's Mint and win 100 BNB! Accumulate Mints for more Chances to win `,
   amount: 1,
   supply: "0",
   cost: "0",
@@ -155,7 +155,7 @@ function Minter() {
         ...prevState,
         loading: false,
         status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation",
+          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation ${txHash}",
       }));
       getSupply();
     } catch (err) {
@@ -220,7 +220,7 @@ function Minter() {
                 className="button"
                 onClick={() => mint()}
               >
-                Mint {mintInfo.amount}
+                Mint {mintInfo.amount} Destiny Cosmonaut
               </button>
               <div style={{ width: 10 }}></div>
               <button

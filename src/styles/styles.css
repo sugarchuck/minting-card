@@ -7,10 +7,10 @@
   --card: #ffffff;
   --accountText: #ffffff;
   --statusText: #470068;
-  --bg-gradient_1: rgb(162, 196, 240);
+  --bg-gradient_1: rgb(240, 162, 162);
   --bg-gradient_2: rgb(240, 162, 217);
-  --gradient_1: rgb(83, 152, 243);
-  --gradient_2: rgb(236, 71, 214);
+  --gradient_1: rgb(243, 83, 83);
+  --gradient_2: rgb(10, 3, 104);
   --gradient_3: rgb(241, 204, 80);
   --success: #24a13f;
   --warning: #ca5824;
@@ -27,7 +27,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-image: url("src/assets/destinydao.png");
+  background-image: url("/src/assets/destiny.png"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .colorGradient {
@@ -133,6 +137,7 @@ body {
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(-90deg);
+  color: white;
 }
 
 .button {
@@ -159,7 +164,7 @@ button:disabled {
 }
 
 .small_button {
-  display: inline-block;
+  display: none;
   padding: 5px 10px;
   font-size: 10px;
   cursor: pointer;
