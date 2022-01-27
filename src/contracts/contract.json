@@ -1,7 +1,7 @@
 {
   "name": "Destiny Test NFT",
   "symbol": "DNFT",
-  "total_supply": 10,
+  "total_supply": 30,
   "chain_symbol": "BNB",
   "chain": "BSC Testnet",
   "chain_id": 97,
