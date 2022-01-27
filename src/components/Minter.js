@@ -154,7 +154,7 @@ function Minter() {
         ...prevState,
         loading: false,
         status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful.",
+          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation",
       }));
       getSupply();
     } catch (err) {
@@ -295,7 +295,7 @@ function Minter() {
           }}
           className="_90"
           target="_blank"
-          href="https://polygonscan.com/token/0x"
+          href="https://testnet.bscscan.com/address/0xc2605c9ce7b15cc548054c2b2f4d6195ec6ac8a3"
         >
           View Contract
         </a>
