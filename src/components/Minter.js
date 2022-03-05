@@ -155,7 +155,7 @@ function Minter() {
         ...prevState,
         loading: false,
         status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful. Please wait 15 - 20 seconds for confirmation (Verifiable Random Function powered by Chainlink)",
+          "Nice! Your NFT will show up on Opensea, once the transaction is successful.",
         }));
       getSupply();
     } catch (err) {
@@ -220,7 +220,7 @@ function Minter() {
                 className="button"
                 onClick={() => mint()}
               >
-                Mint {mintInfo.amount} Destiny Cosmonaut
+                Mint {mintInfo.amount} Chung Yang NFT
               </button>
               <div style={{ width: 10 }}></div>
               <button
