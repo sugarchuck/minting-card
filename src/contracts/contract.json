@@ -1,11 +1,11 @@
 {
-  "name": "Destiny Test NFT",
-  "symbol": "DNFT",
-  "total_supply": 30,
+  "name": "Chung Yang NFT",
+  "symbol": "TFNT",
+  "total_supply": 1000,
   "chain_symbol": "BNB",
   "chain": "BSC Testnet",
   "chain_id": 97,
-  "address": "0x60fe785882767394abd82cb0a6e8fdce179575f3",
+  "address": "0x9b62Bc4798525C959889E99d85Be5e9D26319261",
   "abi": [
     {
       "inputs": [

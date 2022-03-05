@@ -164,7 +164,6 @@ button:disabled {
 }
 
 .small_button {
-  display: none;
   padding: 5px 10px;
   font-size: 10px;
   cursor: pointer;
