@@ -220,7 +220,7 @@ function Minter() {
                 className="button"
                 onClick={() => mint()}
               >
-                Mint {mintInfo.amount} Chung Yang NFT
+                Mint {mintInfo.amount} Babar Raza NFT
               </button>
               <div style={{ width: 10 }}></div>
               <button

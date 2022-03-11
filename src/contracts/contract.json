@@ -1,11 +1,11 @@
 {
-  "name": "Chung Yang NFT",
+  "name": "Babar Raza NFT",
   "symbol": "TFNT",
-  "total_supply": 1000,
+  "total_supply": 10000,
   "chain_symbol": "BNB",
   "chain": "BSC Testnet",
   "chain_id": 97,
-  "address": "0x9b62Bc4798525C959889E99d85Be5e9D26319261",
+  "address": "0x2F387E91eFc8bD5a17310F4F6809f1B9CA7d8DB9",
   "abi": [
     {
       "inputs": [
