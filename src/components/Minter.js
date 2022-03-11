@@ -237,6 +237,9 @@ function Minter() {
                   {info.web3?.utils.fromWei(mintInfo.cost, "ether") *
                     mintInfo.amount}{" "}
                   {contract.chain_symbol}
+                  First Presale cost: 0.001
+                  Second Presale cost: 0.002
+                  Public Sale cost: 0.003
                 </p>
                 <div style={{ width: 20 }}></div>
                 <p style={{ color: "var(--statusText)", textAlign: "center" }}>
