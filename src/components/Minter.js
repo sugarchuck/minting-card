@@ -15,7 +15,7 @@ const initialInfoState = {
 
 const initialMintState = {
   loading: false,
-  status: ` First Presale cost: 0.001 || Second Presale cost: 0.002 || Public Sale cost: 0.003 || Mint your Awesome ${contract.name}! `,
+  status: `Mint your Awesome ${contract.name}!`,
   amount: 1,
   supply: "0",
   cost: "0",
