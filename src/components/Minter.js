@@ -296,7 +296,7 @@ function Minter() {
           }}
           className="_90"
           target="_blank"
-          href="https://testnet.bscscan.com/address/0x9b62Bc4798525C959889E99d85Be5e9D26319261"
+          href="https://testnet.bscscan.com/address/0xBf6E161bBe64AcD183Dd11da6Ff64F5Ac212786B"
         >
           View Contract
         </a>
