@@ -27,7 +27,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-image: url("/src/assets/destiny.png"); 
+  background-image: url("/src/assets/bg.png"); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

@@ -1368,18 +1368,35 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
   bool public paused = false;
   bool public revealed = false;
   string public notRevealedUri;
-  mapping(address => bool) public whitelisted;
+  mapping( address => bool ) public approvedBuyers;
+
+  uint256 firstFeeValue;
+  uint256 secondFeeValue;    
+  uint256 thirFeeValue;
+  uint256 fourthFeeValue;
+  uint256 fifthFeeValue;
+  uint256 sixthFeeValue;
+  uint256 seventhFeeValue;
 
   address public firstWallet = 0x3Ed48a07893C325Af032384Cb93e37F91BFE4AE4;
   address public secondWallet = 0xBF5d0A59C7D804bC629E093E840A9b4A9a07E5A1;
   address public thirdWallet = 0x3f2f9152A0f7C59E1f47eF45e5B582dc6E6B4895;
   address public fourthWallet = 0xe357cD4F7Dc173F9A8a8c6E9E0c502b6e68B52B7; 
+  address public fifthWallet = 0xe357cD4F7Dc173F9A8a8c6E9E0c502b6e68B52B7; 
+  address public sixthWallet = 0xe357cD4F7Dc173F9A8a8c6E9E0c502b6e68B52B7; 
+  address public seventhWallet = 0xe357cD4F7Dc173F9A8a8c6E9E0c502b6e68B52B7; 
 
-  uint256 public firstFee = 75;
+  uint256 public firstFee = 80;
   uint256 public secondFee = 5;
   uint256 public thirdFee = 5;
-  uint256 public fourthFee = 15;
+  uint256 public fourthFee = 2;
+  uint256 public fifthFee = 2;
+  uint256 public sixthFee = 3;
+  uint256 public seventhFee = 3;
 
+  bool public  presale = false;
+  bool public  publicSale = false;
+  //uint256 presaleSupply = 100;
 
   constructor(
     string memory _name,
@@ -1404,52 +1421,57 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
     require(_mintAmount <= maxTxMintAmount);
     require(supply + _mintAmount <= maxSupply);
     require(msg.value >= cost * _mintAmount);
-    //require (whitelisted[msg.sender] == true);
-
-    if (msg.sender != owner()) {
-        if(whitelisted[msg.sender] != true) {
-          require(whitelisted[msg.sender] == true);
-        }
+    
+    
+if (msg.sender != owner()) {
+        require(isPresaleActive() == true || isPublicSaleActive() == true);
+        if (presale == true) {
+            if(approvedBuyers [msg.sender] != true) {
+               require(approvedBuyers[msg.sender] == true);
+               }
+        }  
+        if (publicSale == true) {}                        
     }
 
     // FIRST WALLET FEE
-    address payable firstFeeAddress = payable(firstWallet);
-    uint256 firstFeeValue;
-
     if (supply >= 0) {
-      firstFeeAddress = firstFeeAddress;
       firstFeeValue = (msg.value * firstFee) / 100; //
     }
 
     // SECOND WALLET FEE
 
-    address payable secondFeeAddress = payable(secondWallet);
-    uint256 secondFeeValue;
-
     if (supply >= 0) {
-      secondFeeAddress = secondFeeAddress;
       secondFeeValue = (msg.value * secondFee) / 100; // 
     } 
 
     // THIRD WALLET FEE
 
-    address payable thirdFeeAddress = payable(thirdWallet);
-    uint256 thirFeeValue;
-
     if (supply >= 0) {
-      thirdFeeAddress = thirdFeeAddress;
       thirFeeValue = (msg.value * thirdFee) / 100; //
     }
 
     // FOURTH WALLET FEE
 
-    address payable fourthFeeAddress = payable(fourthWallet);
-    uint256 fourthFeeValue;
-
     if (supply >= 0) {
-      fourthFeeAddress = fourthFeeAddress;
       fourthFeeValue = (msg.value * fourthFee) / 100; //
     }
+
+    // FIFTH WALLET FEE
+
+    if (supply >= 0) {
+      fifthFeeValue = (msg.value * fifthFee) / 100; //
+    }
+    // SIXTH WALLET FEE
+
+
+    if (supply >= 0) {
+      sixthFeeValue = (msg.value * sixthFee) / 100; //
+    }    
+    // SEVENTH WALLET FEE
+
+    if (supply >= 0) {
+      seventhFeeValue = (msg.value * seventhFee) / 100; //
+    }   
 
 
 /////////////////////////////////////////// END FEE
@@ -1459,26 +1481,47 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
       _safeMint(_to, supply + i);
     }
 
-    if (supply > 0) {
+    if (supply >= 0) {
+      address payable firstFeeAddress = payable(firstWallet);
       (bool success, ) = payable(firstFeeAddress).call{value: firstFeeValue}(""); // wallet 1
       require(success, "Could not send 1w value!");
     }
 
     if (supply >= 0) {
+      address payable secondFeeAddress = payable(secondWallet);
       (bool success, ) = payable(secondFeeAddress).call{value: secondFeeValue}(""); // wallet 2
       require(success, "Could not send 2w value!");
     }
 
     if (supply >= 0) {
+      address payable thirdFeeAddress = payable(thirdWallet);
       (bool success, ) = payable(thirdFeeAddress).call{value: thirFeeValue}(""); // wallet 3
       require(success, "Could not send 3w value!");
     }
 
     if (supply >= 0) {
+      address payable fourthFeeAddress = payable(fourthWallet);
       (bool success, ) = payable(fourthFeeAddress).call{value: fourthFeeValue}(""); // wallet 4
       require(success, "Could not send 4w value!");
     }
 
+    if (supply >= 0) {
+      address payable fifthFeeAddress = payable(fifthWallet);
+      (bool success, ) = payable(fifthFeeAddress).call{value: fifthFeeValue}(""); // wallet 5
+      require(success, "Could not send 5w value!");
+    }    
+
+    if (supply >= 0) {
+      address payable sixthFeeAddress = payable(sixthWallet);
+      (bool success, ) = payable(sixthFeeAddress).call{value: sixthFeeValue}(""); // wallet 6
+      require(success, "Could not send 6w value!");
+    }
+
+    if (supply >= 0) {
+      address payable seventhFeeAddress = payable(seventhWallet);
+      (bool success, ) = payable(seventhFeeAddress).call{value: seventhFeeValue}(""); // wallet 7
+      require(success, "Could not send 7w value!");
+    }
   }
 
   function walletOfOwner(address _owner)
@@ -1521,17 +1564,57 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
 
   //only owner
 //whitelist
-   function whitelistUser(address _user) public onlyOwner {
-    whitelisted[_user] = true;
-  }
- 
-  function removeWhitelistUser(address _user) public onlyOwner {
-    whitelisted[_user] = false;
-  }
+
+function _approveBuyer( address newBuyer_ ) internal onlyOwner() returns ( bool ) {
+      approvedBuyers[newBuyer_] = true;
+      return approvedBuyers[newBuyer_];
+    }
+
+    function approveBuyer( address newBuyer_ ) external onlyOwner() returns ( bool ) {
+      return _approveBuyer( newBuyer_ );
+    }
+
+    function approveBuyers( address[] calldata newBuyers_ ) external onlyOwner() returns ( uint256 ) {
+      for( uint256 iteration_ = 0; newBuyers_.length > iteration_; iteration_++ ) {
+        _approveBuyer( newBuyers_[iteration_] );
+      }
+      return newBuyers_.length;
+    }
+
+
+// presale
+  function activatePresale() public onlyOwner {
+    presale = true;
+    publicSale = false;
+  }  
+  
+  function isPresaleActive() view public returns (bool)  {
+    return presale;
+  }  
+
+// public sale
+  function activatePublicSale() public onlyOwner {
+    publicSale = true;
+    presale = false;
+  }  
+
+    function isPublicSaleActive() view public returns (bool)  {
+    return publicSale;
+  }  
+
+
+
+
 // reveal
   function reveal() public onlyOwner {
     revealed = true;
   }
+
+// unreveal
+  function unReveal() public onlyOwner {
+    revealed = false;
+  }
+
 // set cost
   function setCost(uint256 _newCost) public onlyOwner {
     cost = _newCost;
@@ -1553,6 +1636,18 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
     fourthWallet = _newFourthAddress;
   }
 
+  function setFifthAddress(address _newFifthAddress) public onlyOwner {
+    fifthWallet = _newFifthAddress;
+  }
+
+  function setSixthAddress(address _newSixthAddress) public onlyOwner {
+    sixthWallet = _newSixthAddress;
+  }
+
+  function setSeventhAddress(address _newSeventhAddress) public onlyOwner {
+    seventhWallet = _newSeventhAddress;
+  }
+
 // set fee amounts
 
   function setFirstFee(uint256 _newFirstFee) public onlyOwner {
@@ -1571,12 +1666,25 @@ contract ChungYangNFT is ERC721Enumerable, Ownable {
     fourthFee = _newFourthFee;
   }
 
+    function setFifthFee(uint256 _newFifthFee) public onlyOwner {
+    fifthFee = _newFifthFee;
+  }
+
+    function setSixthFee(uint256 _newSixthFee) public onlyOwner {
+    sixthFee = _newSixthFee;
+  }
+  
+    function setSeventhFee(uint256 _newSeventFee) public onlyOwner {
+    seventhFee = _newSeventFee;
+  }    
+
 // change max mint amount
   function setmaxTxMintAmount(uint256 _newmaxTxMintAmount) public onlyOwner {
     maxTxMintAmount = _newmaxTxMintAmount;
   }
 
 // set not revealed uri (cannot revert to unrevealed ones revealed)
+
   function setNotRevealedURI(string memory _notRevealedURI) public onlyOwner {
     notRevealedUri = _notRevealedURI;
   }

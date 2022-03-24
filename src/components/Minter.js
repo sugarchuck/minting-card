@@ -168,7 +168,8 @@ function Minter() {
   };
 
   const updateAmount = (newAmount) => {
-    if (newAmount <= 1 && newAmount >= 1) {
+      // CHANGE "<=2" TO MAX_TX MINT AMOUNT 
+    if (newAmount <= 2 && newAmount >= 1) {
       setMintInfo((prevState) => ({
         ...prevState,
         amount: newAmount,
@@ -220,7 +221,7 @@ function Minter() {
                 className="button"
                 onClick={() => mint()}
               >
-                Mint {mintInfo.amount} Babar Raza NFT
+                Mint {mintInfo.amount} Awesome NFT
               </button>
               <div style={{ width: 10 }}></div>
               <button
@@ -296,7 +297,7 @@ function Minter() {
           }}
           className="_90"
           target="_blank"
-          href="https://testnet.bscscan.com/address/0xBf6E161bBe64AcD183Dd11da6Ff64F5Ac212786B"
+          href="https://testnet.bscscan.com/address/YOURTTOKENADDRESS"
         >
           View Contract
         </a>
