@@ -169,7 +169,7 @@ function Minter() {
 
   const updateAmount = (newAmount) => {
       // CHANGE "<=10" TO MAX_TX MINT AMOUNT 
-    if (newAmount <= 10 && newAmount >= 1) {
+    if (newAmount <= 3 && newAmount >= 1) {
       setMintInfo((prevState) => ({
         ...prevState,
         amount: newAmount,
