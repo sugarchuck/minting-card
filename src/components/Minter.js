@@ -15,7 +15,7 @@ const initialInfoState = {
 
 const initialMintState = {
   loading: false,
-  status: `Mint your Awesome ${contract.name}!`,
+  status: `Keep Pushin P's ${contract.name}!`,
   amount: 1,
   supply: "0",
   cost: "0",
@@ -168,7 +168,7 @@ function Minter() {
   };
 
   const updateAmount = (newAmount) => {
-      // CHANGE "<=2" TO MAX_TX MINT AMOUNT 
+      // CHANGE "<=10" TO MAX_TX MINT AMOUNT 
     if (newAmount <= 2 && newAmount >= 1) {
       setMintInfo((prevState) => ({
         ...prevState,
