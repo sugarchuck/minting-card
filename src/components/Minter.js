@@ -221,7 +221,7 @@ function Minter() {
                 className="button"
                 onClick={() => mint()}
               >
-                Mint {mintInfo.amount} Awesome NFT
+                PUSH HERE to mint {mintInfo.amount} Pack
               </button>
               <div style={{ width: 10 }}></div>
               <button
