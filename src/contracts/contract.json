@@ -1,11 +1,11 @@
 {
-  "name": "Awesome NFT",
-  "symbol": "TFNT",
-  "total_supply": 10000,
-  "chain_symbol": "BNB",
-  "chain": "BSC Testnet",
-  "chain_id": 97,
-  "address": "0xC6eb09cE03075B45dF1AE3C1ADbE02B3ba635374",
+  "name": "CGTESTING",
+  "symbol": "CGTESTING",
+  "total_supply": 8400,
+  "chain_symbol": "MATIC",
+  "chain": "POLYGON",
+  "chain_id": 137,
+  "address": "0xf367596f6810E8dfE72F3c21C5C09B0d0CeF862C",
   "abi": [
     {
       "inputs": [
